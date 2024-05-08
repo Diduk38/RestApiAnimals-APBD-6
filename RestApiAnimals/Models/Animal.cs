@@ -2,21 +2,20 @@
 
 public class Animal
 {
-    public int Id { get; set; }
-    
+    public int IdAnimal { get; set; }
     public string Name { get; set; }
-    
     public string Category { get; set; }
-    public double Weight { get; set; }
-    public string ColorOfFur { get; set; }
+    
+    public string Description { get; set; }
+    public string Area { get; set; }
 
     public void Copy(Animal animal)
     {
-        Id = animal.Id;
+        IdAnimal = animal.IdAnimal;
         Name = animal.Name;
         Category = animal.Category;
-        Weight = animal.Weight;
-        ColorOfFur = animal.ColorOfFur;
+       Description = animal.Description;
+        Area = animal.Area;
     }
     
 }

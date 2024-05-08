@@ -24,6 +24,28 @@ public class AnimalController:ControllerBase
       return Ok(animals);
     }
 
+    [HttpGet("{orderBy}")]
+    public IActionResult GetSortedAnimals(string orderBy)
+    {
+        var animals = _animalService.GetAnimals();
+        switch (orderBy)
+        {
+            case "Name":
+                return Ok(animals.OrderBy(animal => animal.Name));
+            case "Category":
+                return Ok(animals.OrderBy(animal=>animal.Category));
+            
+            case "Description":
+                return Ok(animals.OrderBy(animal=>animal.Description));
+            
+            case "Area":
+                return Ok(animals.OrderBy(animal=>animal.Area));
+            default:
+                return StatusCode(StatusCodes.Status403Forbidden);
+        }
+
+    }
+    
     [HttpGet("{id:int}")]
     public IActionResult GetAnimal(int id)
     {

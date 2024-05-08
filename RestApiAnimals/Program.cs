@@ -2,6 +2,7 @@
 
 
 
+
 using RestApiAnimals.Repositories;
 using RestApiAnimals.Services;
 
@@ -16,8 +17,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAnimalRepository, AnimalRepository>();
 builder.Services.AddScoped<IAnimalService, AnimalService>();
-builder.Services.AddScoped<IVisitRepository,VisitRepository>();
-builder.Services.AddScoped<IVisitService,VisitService>();
+
 
 
 var app = builder.Build();
